@@ -17,19 +17,16 @@ namespace Interview.Api.Controllers
         {
             _userData = userData;
         }
-        // GET: api/User
         public IEnumerable<User> Get()
         {
             return _userData.GetAll();
         }
 
-        // GET: api/User/5
         public User Get(int id)
         {
             return _userData.GetById(id);
         }
 
-        // POST: api/User
         public ApiResult Post([FromBody]User value)
         {
             ApiResult result = new ApiResult();
@@ -56,8 +53,6 @@ namespace Interview.Api.Controllers
             }
             return result;
         }
-
-        // PUT: api/User/5
         public ApiResult Put(int id, [FromBody]User value)
         {
             ApiResult result = new ApiResult();
@@ -84,7 +79,6 @@ namespace Interview.Api.Controllers
             return result;
         }
 
-        // DELETE: api/User/5
         public ApiResult Delete(int id)
         {
             ApiResult result = new ApiResult();
