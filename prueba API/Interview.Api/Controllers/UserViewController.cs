@@ -52,21 +52,34 @@ namespace Interview.Api.Controllers
             return View(user);
         }
 
-        // GET: UserView/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: UserView/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(UserViewModel user)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(_baseUrl);
 
-                return RedirectToAction("Index");
+                        var response = client.PostAsJsonAsync("api/User", user).GetAwaiter().GetResult();
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "Server error try after some time.");
+                        }
+                    }
+                }
+                return View(user);
             }
             catch
             {
@@ -74,7 +87,6 @@ namespace Interview.Api.Controllers
             }
         }
 
-        // GET: UserView/Edit/5
         public ActionResult Edit(int id)
         {
             UserViewModel user = new UserViewModel();
@@ -95,15 +107,29 @@ namespace Interview.Api.Controllers
             return View(user);
         }
 
-        // POST: UserView/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, UserViewModel user)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(_baseUrl);
+                        var response = client.PutAsJsonAsync("api/User/" + id, user).GetAwaiter().GetResult();
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "Server error try after some time.");
+                        }
+                    }
+                    return RedirectToAction("Index");
+                }
+                return View(user);
             }
             catch
             {
@@ -111,7 +137,6 @@ namespace Interview.Api.Controllers
             }
         }
 
-        // GET: UserView/Delete/5
         public ActionResult Delete(int id)
         {
             UserViewModel user = new UserViewModel();
@@ -132,15 +157,24 @@ namespace Interview.Api.Controllers
             return View(user);
         }
 
-        // POST: UserView/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                // TODO: Add delete logic here
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(_baseUrl);
 
-                return RedirectToAction("Index");
+                    var response = client.DeleteAsync($"api/User/{id}").GetAwaiter().GetResult();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                        ModelState.AddModelError(string.Empty, "Server error try after some time.");
+                }
+                return View();
             }
             catch
             {
