@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestXam.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="30">
+            <Image Source="name.png" WidthRequest="200" HeightRequest="150"/>
+            <Label Text="Introduce tu nombre de usuario"/>
+            <Entry x:Name="Username" Placeholder="email@emailserver.com"/>
+            <Button Text="Iniciar sesión" Clicked="Login_Clicked" BackgroundColor="#a094b7"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
