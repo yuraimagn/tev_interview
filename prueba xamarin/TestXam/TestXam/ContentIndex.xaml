@@ -8,14 +8,14 @@
             <forms:CarouselView x:Name="CarouselPaises">
                 <forms:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding .}"></Image>
+                        <Image Source="{Binding .}" WidthRequest="100" HeightRequest="100"></Image>
                     </DataTemplate>
                 </forms:CarouselView.ItemTemplate>
             </forms:CarouselView>
             <ListView x:Name="ListPaises"  ItemSelected="ListPaises_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Description}"></TextCell>
+                        <TextCell Text="{Binding Description}" TextColor="Black"></TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

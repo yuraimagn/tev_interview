@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestXam.Common;
 using TestXam.Common.DataAccess;
 using TestXam.Common.DTO;
 using Xamarin.Forms;
@@ -33,10 +34,8 @@ namespace TestXam
                 var element = e.SelectedItem as PaisDTO;
                 if(element.Id == 7)
                 {
-                    List<string> images = new List<string>();
-                    //images.Add("https://source.unsplash.com/random");
-                    //images.Add("https://source.unsplash.com/random");
-                    CarouselPaises.ItemsSource = images;
+                    ApiRestPictures api = new ApiRestPictures();
+                    CarouselPaises.ItemsSource = api.GetPhotos();
                 }
                 CarouselPaises.ItemsSource = element.Pictures;
             }

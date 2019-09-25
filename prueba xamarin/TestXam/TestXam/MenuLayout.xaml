@@ -13,8 +13,7 @@
                         <ImageCell TextColor="Black" DetailColor="Black" Height="25"
                                    Text="{Binding MenuTitle}"
                                    Detail="{Binding MenuDetail}"
-                                   ImageSource="{Binding Icon}">
-                        </ImageCell>
+                                   ImageSource="{Binding Icon}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
