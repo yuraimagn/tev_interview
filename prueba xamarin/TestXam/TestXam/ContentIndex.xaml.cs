@@ -36,8 +36,10 @@ namespace TestXam
                 {
                     ApiRestPictures api = new ApiRestPictures();
                     CarouselPaises.ItemsSource = api.GetPhotos();
+                } else
+                {
+                    CarouselPaises.ItemsSource = element.Pictures;
                 }
-                CarouselPaises.ItemsSource = element.Pictures;
             }
 
         }
