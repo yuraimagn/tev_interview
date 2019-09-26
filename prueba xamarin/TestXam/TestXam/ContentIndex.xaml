@@ -12,19 +12,23 @@
                             Source="{Binding .}" 
                             AbsoluteLayout.LayoutBounds="0,0,1,1"
                             AbsoluteLayout.LayoutFlags="All"
-                            HorizontalOptions="FillAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
                             Aspect="AspectFill"
                             />
                     </DataTemplate>
                 </forms:CarouselView.ItemTemplate>
             </forms:CarouselView>
-            <ListView x:Name="ListPaises"  ItemSelected="ListPaises_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Description}" TextColor="Black"></TextCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout HeightRequest="200">
+                <ListView x:Name="ListPaises" ItemSelected="ListPaises_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Description}" 
+                                  TextColor="Black"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

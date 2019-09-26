@@ -10,9 +10,8 @@
             <ListView BackgroundColor="#ede7f6" x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell TextColor="Black" DetailColor="Black" Height="25"
+                        <ImageCell TextColor="Black" DetailColor="Black" Height="20"
                                    Text="{Binding MenuTitle}"
-                                   Detail="{Binding MenuDetail}"
                                    ImageSource="{Binding Icon}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
