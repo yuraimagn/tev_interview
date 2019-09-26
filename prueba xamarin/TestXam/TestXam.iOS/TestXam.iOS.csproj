@@ -176,9 +176,6 @@
     <BundleResource Include="Resources\Argentina1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Argentina2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Brasil1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -207,5 +204,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Mexico2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Argentina2.jpg" />
   </ItemGroup>
 </Project>
