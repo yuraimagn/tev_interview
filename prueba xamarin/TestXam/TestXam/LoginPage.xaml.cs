@@ -21,10 +21,13 @@ namespace TestXam
 
         void Login_Clicked(object sender, System.EventArgs e)
         {
-            App.Current.Properties["email"] = Username.Text;
-            App.Current.Properties["IsLoggedIn"] = true;
+            if(!String.IsNullOrWhiteSpace(Username.Text))
+            {
+                App.Current.Properties["email"] = Username.Text;
+                App.Current.Properties["IsLoggedIn"] = true;
 
-            _loginManager.ShowMainPage();
+                _loginManager.ShowMainPage();
+            }
         }
 
     }

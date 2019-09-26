@@ -3,5 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestXam.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ColorPrimary">#7b1fa2</Color>
+            <Color x:Key="ColorPrimaryDark">#4a0072</Color>
+            <Color x:Key="ColorPrimaryLight">#ae52d4</Color>
+            <Color x:Key="ColorSecondary">#558b2f</Color>
+            <Color x:Key="ColorSecondaryDark">#255d00</Color>
+            <Color x:Key="ColorSecondaryLight">#85bb5c</Color>
+            <Style  TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="#558b2f" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderRadius" Value="2" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

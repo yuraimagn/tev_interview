@@ -15,12 +15,18 @@ namespace TestXam.Common.DTO
             if(Application.Current.Properties.ContainsKey("email"))
             {
                 var val = Application.Current.Properties["email"];
-                Email = val.ToString();
+                if(val != null)
+                {
+                    Email = val.ToString();
+                }
             }
             if (Application.Current.Properties.ContainsKey("name"))
             {
                 var val = Application.Current.Properties["name"];
-                Name = val.ToString();
+                if(val != null)
+                {
+                    Name = val.ToString();
+                }
             }
 
         }

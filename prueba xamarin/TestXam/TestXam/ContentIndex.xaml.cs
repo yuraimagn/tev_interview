@@ -32,7 +32,7 @@ namespace TestXam
             if(e.SelectedItem != null)
             {
                 var element = e.SelectedItem as PaisDTO;
-                if(element.Id == 7)
+                if(element.Id == 0)
                 {
                     ApiRestPictures api = new ApiRestPictures();
                     CarouselPaises.ItemsSource = api.GetPhotos();

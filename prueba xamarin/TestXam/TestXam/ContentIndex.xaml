@@ -8,7 +8,13 @@
             <forms:CarouselView x:Name="CarouselPaises">
                 <forms:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding .}" WidthRequest="100" HeightRequest="100"></Image>
+                        <Image x:Name="CarouselImg"
+                            Source="{Binding .}" 
+                            AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            HorizontalOptions="FillAndExpand"
+                            Aspect="AspectFill"
+                            />
                     </DataTemplate>
                 </forms:CarouselView.ItemTemplate>
             </forms:CarouselView>

@@ -7,7 +7,7 @@
             <Image Source="name.png" WidthRequest="200" HeightRequest="150"/>
             <Label Text="Introduce tu nombre de usuario"/>
             <Entry x:Name="Username" Placeholder="email@emailserver.com"/>
-            <Button Text="Iniciar sesión" Clicked="Login_Clicked" BackgroundColor="#a094b7"/>
+            <Button Text="Iniciar sesión" Clicked="Login_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
